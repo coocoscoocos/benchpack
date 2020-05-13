@@ -14,7 +14,7 @@ class MergerBenchmarkMt : Runnable {
         }
         println("done")
         val results = mutableListOf<Long>()
-        (1..3).forEach {
+        (1..10).forEach {
             print("run $it")
             results.add(step())
         }
@@ -24,11 +24,11 @@ class MergerBenchmarkMt : Runnable {
     }
 
     private fun step() : Long {
-        val userCount = 10_000_000L
+        val userCount = 2_000_000L
         val users = (1..userCount).map {
             val name = "user" + 3 * it
             val mailCount = Random.nextInt(5, 10)
-            val mailSet = (1..mailCount).map {"user" + Random.nextLong(userCount / 100) + "@domain.com" }.toHashSet()
+            val mailSet = (1..mailCount).map {"user" + Random.nextLong(userCount / 80) + "@domain.com" }.toHashSet()
             User(name, mailSet)
         } .toList();
         val startMillis = System.currentTimeMillis()

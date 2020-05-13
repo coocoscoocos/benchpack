@@ -7,7 +7,7 @@ import java.util.concurrent.RecursiveTask
 
 class MergeRecursiveTask (val userList : List<User>) : RecursiveTask<List<User>>() {
 
-    val maxUsersInTask = 50_000;
+    val maxUsersInTask = 10_000;
 
     override fun compute(): List<User> {
         if (userList.size > maxUsersInTask) {
