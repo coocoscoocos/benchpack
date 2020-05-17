@@ -1,7 +1,6 @@
 package ru.coocos.benchpack
 
-import ru.coocos.benchpack.usermerger.MergerBenchmark
-import ru.coocos.benchpack.usermerger.MergerBenchmarkMt
+import ru.coocos.benchpack.indexer.IndexerBenchmark
 
 object Benchpack {
 
@@ -9,8 +8,10 @@ object Benchpack {
     fun main(args: Array<String>) {
 //        val mergerBenchmark = MergerBenchmark()
 //        mergerBenchmark.run()
-        val mergerBenchmarkMt = MergerBenchmarkMt()
-        mergerBenchmarkMt.run()
+//        val mergerBenchmarkMt = MergerBenchmarkMt()
+//        mergerBenchmarkMt.run()
+        val indexer = IndexerBenchmark()
+        indexer.run()
 
     }
 }
